@@ -89,14 +89,14 @@
          ============================================ -->
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#5271FF',
-                        secondary: '#F5A623',
-                        dark: '#1F2937',
-                        light: '#F9FAFB'
-                    },
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#FAF406', // Cor alterada aqui
+                                secondary: '#F5A623',
+                                dark: '#1F2937',
+                                light: '#F9FAFB'
+                            },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
                         'outfit': ['Outfit', 'sans-serif']
@@ -136,13 +136,13 @@
     <style>
         /* ====== VARIÁVEIS CSS ====== */
         :root {
-            --primary: #5271FF;
-            --secondary: #F5A623;
-            --dark: #1F2937;
-            --light: #F9FAFB;
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+                    --primary: #FAF406; /* Alterado */
+                    --secondary: #F5A623;
+                    --dark: #1F2937;
+                    --light: #F9FAFB;
+                    --border-radius: 12px;
+                    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
         
         /* ====== TIPOGRAFIA BASE ====== */
         * {
@@ -163,30 +163,30 @@
         
         /* ====== CORES E GRADIENTES ====== */
         .gradient-primary {
-            background: linear-gradient(135deg, #5271FF 0%, #6B5CE8 100%);
-        }
-        
-        .gradient-light {
-            background: linear-gradient(135deg, rgba(82, 113, 255, 0.05) 0%, rgba(107, 92, 232, 0.05) 100%);
-        }
-        
+                background: #FAF406; /* Removido o roxo, deixado amarelo sólido */
+            }
+
+            .gradient-light {
+                background: linear-gradient(135deg, rgba(250, 244, 6, 0.1) 0%, rgba(245, 166, 35, 0.05) 100%);
+            }
         /* ====== BOTÕES ESTILIZADOS ====== */
-        .btn-primary {
-            background: linear-gradient(135deg, #5271FF 0%, #6B5CE8 100%);
-            color: white;
+                .btn-primary {
+            background: #FAF406;
+            color: #1F2937; /* Texto escuro para leitura no amarelo */
             padding: 14px 32px;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700;
             transition: var(--transition);
             display: inline-block;
             text-decoration: none;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 30px rgba(82, 113, 255, 0.2);
+            border: 2px solid #E5E100; /* Borda levemente mais escura para dar profundidade */
+            box-shadow: 0 10px 30px rgba(250, 244, 6, 0.2);
         }
-        
+
         .btn-primary:hover {
+            background: #E5E100; /* Um tom de amarelo mais "queimado" no hover */
+            color: #1F2937;
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(82, 113, 255, 0.3);
         }
         
         .btn-secondary {
