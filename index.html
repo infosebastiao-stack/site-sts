@@ -446,6 +446,10 @@
                     <a href="#cursos" class="text-dark hover:text-primary transition-colors font-medium">Cursos</a>
                     <a href="#redes-sociais" class="text-dark hover:text-primary transition-colors font-medium flex items-center gap-1">Projetos</a>
                     <a href="#faq" class="text-dark hover:text-primary transition-colors font-medium">FAQ</a>
+                    <a href="#" onclick="abrirHorarios()" 
+                    class="text-dark hover:text-primary transition-colors font-medium">
+                    Horários de Aula
+                    </a>
                     <a href="https://matriculaonline.sed.sc.gov.br/inicio.aspx" target="_blank" class="btn-primary text-sm">Matricule-se</a>
                 </nav>
                 
@@ -476,6 +480,10 @@
                 <a href="#cursos" class="text-dark hover:text-primary transition-colors font-medium text-lg">Cursos</a>
                 <a href="#redes-sociais" class="text-dark hover:text-primary transition-colors font-medium text-lg">Projetos</a>
                 <a href="#faq" class="text-dark hover:text-primary transition-colors font-medium text-lg">FAQ</a>
+                <a href="#" onclick="abrirHorarios()" 
+                    class="text-dark hover:text-primary transition-colors font-medium">
+                    Horários de Aula
+                    </a>
                 <a href="https://matriculaonline.sed.sc.gov.br/inicio.aspx" target="_blank" class="btn-primary text-center">Matricule-se</a>
             </nav>
         </div>
@@ -1024,6 +1032,70 @@
             </div>
         </div>
     </footer>
+
+    <!-- MODAL HORÁRIOS -->
+<div id="modal-horarios" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+
+    <div class="bg-white rounded-2xl w-[95%] max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative animate-fade-in">
+
+        <!-- BOTÃO FECHAR -->
+        <button onclick="fecharHorarios()" 
+                class="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-black">
+            ✕
+        </button>
+
+        <!-- TÍTULO -->
+        <h2 class="text-3xl font-poppins font-bold text-dark mb-6 text-center">
+            Horários de Aula
+        </h2>
+
+        <!-- CONTEÚDO -->
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- MATUTINO -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 text-center">🌅 Matutino</h3>
+                <ul class="text-sm text-gray-600 space-y-1 text-center">
+                    <li>1ª - 7:15 - 8:00</li>
+                    <li>2ª - 8:00 - 8:45</li>
+                    <li>3ª - 8:45 - 9:30</li>
+                    <li class="font-semibold text-primary">Intervalo 9:30 - 9:45</li>
+                    <li>4ª - 9:45 - 10:30</li>
+                    <li>5ª - 10:30 - 11:15</li>
+                    <li>6ª - 11:15 - 12:00</li>
+                </ul>
+            </div>
+
+            <!-- VESPERTINO -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 text-center">☀️ Vespertino</h3>
+                <ul class="text-sm text-gray-600 space-y-1 text-center">
+                    <li>1ª - 13:00 - 13:45</li>
+                    <li>2ª - 13:45 - 14:30</li>
+                    <li>3ª - 14:30 - 15:15</li>
+                    <li class="font-semibold text-primary">Intervalo 15:15 - 15:30</li>
+                    <li>4ª - 15:30 - 16:15</li>
+                    <li>5ª - 16:15 - 17:00</li>
+                    <li>6ª - 17:00 - 17:45</li>
+                </ul>
+            </div>
+
+            <!-- NOTURNO -->
+            <div>
+                <h3 class="font-bold text-lg mb-3 text-center">🌙 Noturno</h3>
+                <ul class="text-sm text-gray-600 space-y-1 text-center">
+                    <li>1ª - 18:30 - 19:10</li>
+                    <li>2ª - 19:10 - 19:50</li>
+                    <li>3ª - 19:50 - 20:30</li>
+                    <li class="font-semibold text-primary">Intervalo 20:30 - 20:40</li>
+                    <li>4ª - 20:40 - 21:20</li>
+                    <li>5ª - 21:20 - 22:00</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
     
     <!-- ============================================
          BOTÃO WHATSAPP FLUTUANTE
@@ -1136,6 +1208,24 @@
                 }
             });
         });
+
+        function abrirHorarios() {
+    document.getElementById('modal-horarios').classList.remove('hidden');
+    document.getElementById('modal-horarios').classList.add('flex');
+}
+
+function fecharHorarios() {
+    document.getElementById('modal-horarios').classList.add('hidden');
+    document.getElementById('modal-horarios').classList.remove('flex');
+}
+
+// fechar clicando fora
+document.getElementById('modal-horarios').addEventListener('click', function(e) {
+    if (e.target === this) {
+        fecharHorarios();
+    }
+});
+
         
         // ===== FORMULÁRIO DE CONTATO =====
         const contactForm = document.getElementById('contact-form');
