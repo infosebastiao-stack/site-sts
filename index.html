@@ -1037,63 +1037,75 @@
     </footer>
 
     <!-- MODAL HORÁRIOS -->
-<div id="modal-horarios" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+<!-- MODAL HORÁRIOS RESPONSIVO -->
+<div id="modal-horarios" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[9999]">
 
-    <div class="bg-white rounded-2xl w-[95%] max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative animate-fade-in">
+    <!-- CONTAINER -->
+    <div class="
+        bg-white w-full h-full 
+        md:max-w-4xl md:h-auto md:max-h-[90vh] md:rounded-2xl
+        flex flex-col relative
+    ">
 
-        <!-- BOTÃO FECHAR -->
+        <!-- BOTÃO FECHAR (sempre visível) -->
         <button onclick="fecharHorarios()" 
-                class="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-black">
+            class="absolute top-4 right-4 z-50 bg-white rounded-full px-3 py-1 shadow text-xl font-bold hover:bg-gray-100">
             ✕
         </button>
 
         <!-- TÍTULO -->
-        <h2 class="text-3xl font-poppins font-bold text-dark mb-6 text-center">
-            Horários de Aula
-        </h2>
+        <div class="p-6 border-b">
+            <h2 class="text-2xl font-poppins font-bold text-dark text-center">
+                Horários de Aula
+            </h2>
+        </div>
 
-        <!-- CONTEÚDO -->
-        <div class="grid md:grid-cols-3 gap-6">
+        <!-- CONTEÚDO COM SCROLL -->
+        <div class="flex-1 overflow-y-auto p-6">
 
-            <!-- MATUTINO -->
-            <div>
-                <h3 class="font-bold text-lg mb-3 text-center">🌅 Matutino</h3>
-                <ul class="text-sm text-gray-600 space-y-1 text-center">
-                    <li>1ª - 7:15 - 8:00</li>
-                    <li>2ª - 8:00 - 8:45</li>
-                    <li>3ª - 8:45 - 9:30</li>
-                    <li class="font-semibold text-black">Intervalo 9:30 - 9:45</li>
-                    <li>4ª - 9:45 - 10:30</li>
-                    <li>5ª - 10:30 - 11:15</li>
-                    <li>6ª - 11:15 - 12:00</li>
-                </ul>
-            </div>
+            <div class="grid md:grid-cols-3 gap-6">
 
-            <!-- VESPERTINO -->
-            <div>
-                <h3 class="font-bold text-lg mb-3 text-center">☀️ Vespertino</h3>
-                <ul class="text-sm text-gray-600 space-y-1 text-center">
-                    <li>1ª - 13:00 - 13:45</li>
-                    <li>2ª - 13:45 - 14:30</li>
-                    <li>3ª - 14:30 - 15:15</li>
-                    <li class="font-semibold text-black">Intervalo 15:15 - 15:30</li>
-                    <li>4ª - 15:30 - 16:15</li>
-                    <li>5ª - 16:15 - 17:00</li>
-                    <li>6ª - 17:00 - 17:45</li>
-                </ul>
-            </div>
+                <!-- MATUTINO -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-center">🌅 Matutino</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-center">
+                        <li>1ª - 7:15 - 8:00</li>
+                        <li>2ª - 8:00 - 8:45</li>
+                        <li>3ª - 8:45 - 9:30</li>
+                        <li class="font-semibold text-black">Intervalo 9:30 - 9:45</li>
+                        <li>4ª - 9:45 - 10:30</li>
+                        <li>5ª - 10:30 - 11:15</li>
+                        <li>6ª - 11:15 - 12:00</li>
+                    </ul>
+                </div>
 
-            <!-- NOTURNO -->
-            <div>
-                <h3 class="font-bold text-lg mb-3 text-center">🌙 Noturno</h3>
-                <ul class="text-sm text-gray-600 space-y-1 text-center">
-                    <li>1ª - 18:30 - 19:10</li>
-                    <li>2ª - 19:10 - 19:50</li>
-                    <li>3ª - 19:50 - 20:30</li>
-                    <li class="font-semibold text-black">Intervalo 20:30 - 20:40</li>
-                    <li>4ª - 20:40 - 21:20</li>
-                    <li>5ª - 21:20 - 22:00</li>
-                </ul>
+                <!-- VESPERTINO -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-center">☀️ Vespertino</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-center">
+                        <li>1ª - 13:00 - 13:45</li>
+                        <li>2ª - 13:45 - 14:30</li>
+                        <li>3ª - 14:30 - 15:15</li>
+                        <li class="font-semibold text-black">Intervalo 15:15 - 15:30</li>
+                        <li>4ª - 15:30 - 16:15</li>
+                        <li>5ª - 16:15 - 17:00</li>
+                        <li>6ª - 17:00 - 17:45</li>
+                    </ul>
+                </div>
+
+                <!-- NOTURNO -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-center">🌙 Noturno</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-center">
+                        <li>1ª - 18:30 - 19:10</li>
+                        <li>2ª - 19:10 - 19:50</li>
+                        <li>3ª - 19:50 - 20:30</li>
+                        <li class="font-semibold text-black">Intervalo 20:30 - 20:40</li>
+                        <li>4ª - 20:40 - 21:20</li>
+                        <li>5ª - 21:20 - 22:00</li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
@@ -1212,22 +1224,32 @@
             });
         });
 
-        function abrirHorarios() {
-    document.getElementById('modal-horarios').classList.remove('hidden');
-    document.getElementById('modal-horarios').classList.add('flex');
+       function abrirHorarios() {
+    const modal = document.getElementById('modal-horarios');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
 }
 
 function fecharHorarios() {
-    document.getElementById('modal-horarios').classList.add('hidden');
-    document.getElementById('modal-horarios').classList.remove('flex');
+    const modal = document.getElementById('modal-horarios');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
 }
 
-// fechar clicando fora
-document.getElementById('modal-horarios').addEventListener('click', function(e) {
-    if (e.target === this) {
-        fecharHorarios();
+// GARANTE que o elemento existe antes de usar
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('modal-horarios');
+
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                fecharHorarios();
+            }
+        });
     }
 });
+
+
 
         
         // ===== FORMULÁRIO DE CONTATO =====
